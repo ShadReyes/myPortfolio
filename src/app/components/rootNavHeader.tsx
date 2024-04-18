@@ -1,6 +1,10 @@
+'use client';
+
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
+import { SiteLinks } from './SiteLinks';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -13,13 +17,20 @@ export default function RootNavHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='bg-white'>
+    <header className='transparent'>
+      <p className='flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit'>
+        Status: Looking For Work
+      </p>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
-        <div className='flex lg:flex-1'>
-          <a href='#' className='-m-1.5 p-1.5'>
-            <span className='sr-only'>Your Company</span>
-            <img className='h-8 w-auto' src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600' alt='' />
-          </a>
+        <div className='flex lg:flex-2'>
+          <Image
+            src={require('../../../public/images/Headshot_1.png')}
+            alt='Shadrac Reyes Headshot'
+            width={100}
+            height={100}
+            style={{ borderRadius: 500 }}
+            priority
+          />
         </div>
         <div className='flex lg:hidden'>
           <button
@@ -33,11 +44,12 @@ export default function RootNavHeader() {
         </div>
         <div className='hidden lg:flex lg:gap-x-12'>
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className='text-sm font-semibold leading-6 text-gray-900'>
+            <a key={item.name} href={item.href} className='text-sm font-semibold leading-6 text-white'>
               {item.name}
             </a>
           ))}
         </div>
+        <SiteLinks />
       </nav>
       <Dialog as='div' className='lg:hidden' open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className='fixed inset-0 z-10' />
@@ -67,7 +79,7 @@ export default function RootNavHeader() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                    className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50'
                   >
                     {item.name}
                   </a>
