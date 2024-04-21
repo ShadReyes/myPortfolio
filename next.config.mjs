@@ -8,6 +8,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+};
 
 export default nextConfig;
