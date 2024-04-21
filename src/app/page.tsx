@@ -16,7 +16,7 @@ import image3 from '@/images/photos/image-3.jpg';
 import image4 from '@/images/photos/image-4.jpg';
 import image5 from '@/images/photos/image-5.jpg';
 import { formatDate } from '@/lib/formatDate';
-import { getSocialLinks } from '@/lib/socialLInks';
+import { getSocialLinks } from '@/lib/socialLinks';
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
