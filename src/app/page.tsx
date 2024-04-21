@@ -16,7 +16,7 @@ import image3 from '@/images/photos/image-3.jpg';
 import image4 from '@/images/photos/image-4.jpg';
 import image5 from '@/images/photos/image-5.jpg';
 import { formatDate } from '@/lib/formatDate';
-import { socialLinks } from '@/lib/socialLInks';
+import { getSocialLinks } from '@/lib/socialLInks';
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -245,6 +245,7 @@ function Photos() {
 }
 
 export default async function Home() {
+  const socialLinks = getSocialLinks();
   return (
     <>
       <Container className='mt-9'>

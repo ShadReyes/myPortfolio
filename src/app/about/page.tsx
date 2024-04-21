@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { Container } from '@/components/Container';
 import { GitHubIcon, InstagramIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons';
 import portraitImage from '@/images/avatar.png';
-import { socialLinks } from '@/lib/socialLInks';
+import { getSocialLinks } from '@/lib/socialLInks';
 
 function SocialLink({
   className,
@@ -49,6 +49,8 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
+  const socialLinks = getSocialLinks();
+
   return (
     <Container className='mt-16 sm:mt-32'>
       <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'>
