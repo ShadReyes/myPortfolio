@@ -12,14 +12,14 @@ import logoAirbnb from '@/images/logos/airbnb.svg';
 import logoFacebook from '@/images/logos/facebook.svg';
 import logoPlanetaria from '@/images/logos/planetaria.svg';
 import logoStarbucks from '@/images/logos/starbucks.svg';
-import image1 from '@/images/photos/image-1.jpg';
-import image2 from '@/images/photos/image-2.jpg';
+import image1 from '@/images/photos/image-1.png';
+import image2 from '@/images/photos/image-2.png';
 import image3 from '@/images/photos/image-3.jpg';
-import image4 from '@/images/photos/image-4.jpg';
+import image4 from '@/images/photos/image-4.png';
 import image5 from '@/images/photos/image-5.jpg';
 import { formatDate } from '@/lib/formatDate';
 import { getSocialLinks } from '@/lib/socialLinks';
-
+import portraitImage from '@/images/avatar.png';
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
@@ -92,15 +92,26 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 // }
 
 function SocialLink({
+  className,
+  href,
+  children,
   icon: Icon,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Link> & {
+}: {
+  className?: string;
+  href: string;
   icon: React.ComponentType<{ className?: string }>;
+  children: React.ReactNode;
 }) {
   return (
-    <Link className='group -m-1 p-1' {...props} target='_blank'>
-      <Icon className='h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300' />
-    </Link>
+    <li className={clsx(className, 'flex')}>
+      <Link
+        href={href}
+        className='group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500'
+      >
+        <Icon className='h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500' />
+        <span className='ml-4'>{children}</span>
+      </Link>
+    </li>
   );
 }
 
@@ -250,34 +261,91 @@ export default async function Home() {
   const socialLinks = getSocialLinks();
   return (
     <>
-      <Container className='mt-9'>
-        <div className='max-w-2xl'>
-          <h1 className='text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100'>
-            Software designer, founder, and amateur astronaut.
-          </h1>
-          <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>
-            I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of
-            Planetaria, where we develop technologies that empower regular people to explore space on their own terms.
-          </p>
-          <div className='mt-6 flex gap-6'>
-            <SocialLink href={socialLinks.twitter} aria-label='Follow on X' icon={XIcon} />
-            <SocialLink href={socialLinks.instagram} aria-label='Follow on Instagram' icon={InstagramIcon} />
-            <SocialLink href={socialLinks.github} aria-label='Follow on GitHub' icon={GitHubIcon} />
-            <SocialLink href={socialLinks.linkedIn} aria-label='Follow on LinkedIn' icon={LinkedInIcon} />
-          </div>
-        </div>
-      </Container>
       <Photos />
-      <Container className='mt-24 md:mt-28'>
-        <div className='mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2'>
-          {/* <div className='flex flex-col gap-16'>
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div> */}
-          <div className='space-y-10 lg:pl-16 xl:pl-24'>
-            <Newsletter />
-            <Resume />
+      <Container className='mt-8 sm:mt-32'>
+        <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'>
+          <div className='lg:pl-20'>
+            <div className='max-w-xs px-2.5 lg:max-w-none'>
+              <Image
+                src={portraitImage}
+                alt=''
+                sizes='(min-width: 1024px) 32rem, 20rem'
+                className='aspect-square rotate-2 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800'
+              />
+            </div>
+          </div>
+          <div className='lg:order-first lg:row-span-2'>
+            <h1 className='text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100'>
+              I’m Shadrac Reyes. I live in Utah where I love snowboarding and building products.
+            </h1>
+            <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
+              <p>
+                Although I was born in Utah, my journey has taken me across four different states, shaping my diverse
+                perspective and love for exploration. From a young age, I found solace and excitement in the world of
+                technology. While others were playing outside, you could often find me immersed in video games or
+                tinkering with old game consoles and electronics.
+              </p>
+              <p>
+                My interest in programming began unexpectedly during a high school job at a resale company, where I was
+                introduced to the world of coding by a co-worker. This revelation sparked a deep curiosity within me,
+                leading me to pursue a major in computer science at Southern Utah University (SUU).
+              </p>
+              <p>
+                During my time at SUU, I discovered my passion for programming patterns but found myself struggling with
+                the solitary nature of traditional coursework. It wasn&apos;t until a summer spent working in
+                door-to-door sales that I realized the importance of collaboration in my learning journey. Armed with
+                this newfound insight, I advocated for more group projects in my classes, where I truly thrived in the
+                collaborative process of building software.
+              </p>
+              <p>
+                In addition to my academic pursuits, I co-founded Crypto Games LLC, a company dedicated to merging my
+                passion for technology with my entrepreneurial spirit. Alongside my partner, we created Crypto Whales, a
+                crypto-themed card game designed to introduce the average person to the world of cryptocurrencies in a
+                fun and engaging way. Through pitch competitions and fundraising efforts, we secured $20,000 in funding
+                to bring our vision to life.
+              </p>
+              <p>
+                When I&apos;m not immersed in the world of technology, you&apos;ll often find me hitting the slopes, as
+                snowboarding has been a lifelong passion of mine. I love nothing more than carving through fresh powder
+                and soaking in the beauty of the mountains. Additionally, I enjoy staying active and connected with my
+                community through playing soccer with local teams.
+              </p>
+              <p>
+                When I&apos;m not immersed in the world of technology, you&apos;ll often find me hitting the slopes, as
+                snowboarding has been a lifelong passion of mine. I love nothing more than carving through fresh powder
+                and soaking in the beauty of the mountains. Additionally, I enjoy staying active and connected with my
+                community through playing soccer with local teams.
+              </p>
+              <p>
+                When I&apos;m not immersed in the world of technology, you&apos;ll often find me hitting the slopes, as
+                snowboarding has been a lifelong passion of mine. I love nothing more than carving through fresh powder
+                and soaking in the beauty of the mountains. Additionally, I enjoy staying active and connected with my
+                community through playing soccer with local teams.
+              </p>
+            </div>
+          </div>
+          <div className='lg:pl-20'>
+            <ul role='list'>
+              <SocialLink href={socialLinks.linkedIn} icon={LinkedInIcon}>
+                Follow on LinkedIn
+              </SocialLink>
+              <SocialLink href={socialLinks.github} icon={GitHubIcon} className='mt-4'>
+                Follow on GitHub
+              </SocialLink>
+              <SocialLink href={socialLinks.twitter} icon={XIcon} className='mt-4'>
+                Follow on X
+              </SocialLink>
+              <SocialLink href={socialLinks.instagram} icon={InstagramIcon} className='mt-4'>
+                Follow on Instagram
+              </SocialLink>
+              <SocialLink
+                href='mailto:shad.b.reyes@gmail.com'
+                icon={MailIcon}
+                className='mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40'
+              >
+                shad.b.reyes@gmail.com
+              </SocialLink>
+            </ul>
           </div>
         </div>
       </Container>
