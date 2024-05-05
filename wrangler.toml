@@ -2,6 +2,8 @@ name = "my-next-app"
 compatibility_date = "2024-04-05"
 compatibility_flags = ["nodejs_compat"]
 
+pages_build_output_dir = '/.vercel/output/static'
+
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#environment-variables
@@ -53,6 +55,3 @@ compatibility_flags = ["nodejs_compat"]
 # binding = "MY_SERVICE"
 # service = "my-service"
 #
-
-# pages_build_output_dir = '/.vercel/output/static'
-
