@@ -52,4 +52,7 @@ compatibility_flags = ["nodejs_compat"]
 # [[services]]
 # binding = "MY_SERVICE"
 # service = "my-service"
+#
+
+# pages_build_output_dir = '/.vercel/output/static'
 
