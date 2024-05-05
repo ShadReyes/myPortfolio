@@ -313,16 +313,15 @@ export default async function Home() {
                 community through playing soccer with local teams.
               </p>
               <p>
-                When I&apos;m not immersed in the world of technology, you&apos;ll often find me hitting the slopes, as
-                snowboarding has been a lifelong passion of mine. I love nothing more than carving through fresh powder
-                and soaking in the beauty of the mountains. Additionally, I enjoy staying active and connected with my
-                community through playing soccer with local teams.
+                Since then, I&apos;ve had the incredible opportunity to speak at numerous events, sharing my insights
+                and enthusiasm for blockchain technology. Whether it&apos;s discussing the importance of
+                decentralization or highlighting the potential of blockchain in revolutionizing industries, I&apos;m
+                passionate about spreading awareness and fostering understanding in this rapidly evolving field.
               </p>
               <p>
-                When I&apos;m not immersed in the world of technology, you&apos;ll often find me hitting the slopes, as
-                snowboarding has been a lifelong passion of mine. I love nothing more than carving through fresh powder
-                and soaking in the beauty of the mountains. Additionally, I enjoy staying active and connected with my
-                community through playing soccer with local teams.
+                Today, I bring this passion for innovation, collaboration, and technology to every project I undertake.
+                From software development to community engagement, I&apos;m committed to making a positive impact and
+                pushing the boundaries of what&apos;s possible.
               </p>
             </div>
           </div>
