@@ -261,16 +261,18 @@ export default async function Home() {
   const socialLinks = getSocialLinks();
   return (
     <>
-      <Photos />
-      <Container className='mt-8 sm:mt-32'>
+      <div className='hidden sm:inline'>
+        <Photos />
+      </div>
+      <Container className='mt-16 sm:mt-20'>
         <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'>
-          <div className='lg:pl-20'>
-            <div className='max-w-xs px-2.5 lg:max-w-none'>
+          <div className='m-auto'>
+            <div className='max-w-xs px-2.5 lg:max-w-none lg:pl-20'>
               <Image
                 src={portraitImage}
                 alt=''
                 sizes='(min-width: 1024px) 32rem, 20rem'
-                className='aspect-square rotate-2 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800'
+                className='aspect-square rotate-2 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 mt-5'
               />
             </div>
           </div>
@@ -349,6 +351,9 @@ export default async function Home() {
           </div>
         </div>
       </Container>
+      <div className='inline sm:hidden'>
+        <Photos />
+      </div>
     </>
   );
 }
