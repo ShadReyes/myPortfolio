@@ -278,14 +278,14 @@ export default async function Home() {
           </div>
           <div className='lg:order-first lg:row-span-2'>
             <h1 className='text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100'>
-              I’m Shadrac Reyes. I live in Utah where I love snowboarding and building products.
+              I’m Shadrac Reyes! I love snowboarding and building products!
             </h1>
             <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
               <p>
-                Although I was born in Utah, my journey has taken me across four different states, shaping my diverse
-                perspective and love for exploration. From a young age, I found solace and excitement in the world of
-                technology. While others were playing outside, you could often find me immersed in video games or
-                tinkering with old game consoles and electronics.
+                I was born in Provo, Utah, but my 24 year journey has taken me across four different states, shaping my
+                diverse perspective and love for exploration. From a young age, I found solace and excitement in the
+                world of technology. While others were playing outside, you could often find me immersed in video games
+                or tinkering with old game consoles and electronics.
               </p>
               <p>
                 My interest in programming began unexpectedly during a high school job at a resale company, where I was
