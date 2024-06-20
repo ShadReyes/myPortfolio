@@ -275,6 +275,16 @@ export default async function Home() {
                 className='aspect-square rotate-2 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 mt-5'
               />
             </div>
+            <a
+              target='_blank'
+              download={'Shadrac_Reyes_Resume.pdf'}
+              href='/Resume.pdf'
+              className='group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500 justify-center lg:justify-start lg:pl-20'
+            >
+              <div style={{ borderRadius: 6, backgroundColor: 'grey', padding: 8, marginTop: 20 }}>
+                <p>Download CV</p>
+              </div>
+            </a>
           </div>
           <div className='lg:order-first lg:row-span-2'>
             <h1 className='text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100'>
